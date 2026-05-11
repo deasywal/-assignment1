@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITTA UT - Tracking Pengiriman</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tracking-wrapper {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f7f6;
+            border-radius: 15px;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+        .search-box button {
+            background: #f1c40f;
+            color: #2c3e50;
+            border: none;
+            padding: 0 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .search-box button:hover { background: #d4ac0d; }
+
+        .timeline-container {
+            margin-top: 30px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            display: none;
+            text-align: left;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            border-left: 3px solid #f1c40f;
+            margin-left: 10px;
+        }
+        .timeline li {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #f1c40f;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SITTA UT</div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="stok.html">Stok</a></li>
+            <li><a href="tracking.html" class="active">Tracking</a></li>
+            <li><a href="javascript:void(0)" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="tracking-wrapper">
+        <h2 style="text-align: center; margin-bottom: 20px;">Lacak Pengiriman</h2>
+        
+        <div class="search-box">
+            <input type="text" id="nomorDO" placeholder="Masukkan Nomor DO (Contoh: 2023001234)">
+            <button onclick="cariTracking()">Cek Status</button>
+        </div>
+
+        <div id="hasilTracking" class="timeline-container"></div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

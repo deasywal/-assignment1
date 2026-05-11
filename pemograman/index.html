@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITTA UT - Login Sistem</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+        }
+
+        .login-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 380px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background: #f1c40f;
+            color: #2c3e50;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #d4ac0d;
+        }
+
+        /* STYLE UNTUK MODAL DAFTAR */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 350px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px; top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body class="login-body">
+
+    <div class="login-card">
+        <header>
+            <h2 style="color: #2c3e50; margin-bottom: 5px;">SITTA UT</h2>
+            <p style="font-size: 13px; color: #7f8c8d; margin-bottom: 25px;">Sistem Informasi Distribusi Bahan Ajar</p>
+        </header>
+
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="deasywall1203@gmail.com">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password">
+        </div>
+
+        <button type="button" class="btn-primary" onclick="login()">Masuk ke Sistem</button>
+
+        <div style="margin-top: 20px; font-size: 13px;">
+            <a href="javascript:void(0)" onclick="openModal('registerModal')" style="color: #3498db; text-decoration: none; font-weight: bold;">Daftar Akun Baru</a>
+            <span style="color: #ccc; margin: 0 5px;">|</span>
+            <a href="javascript:void(0)" onclick="alert('Hubungi Admin Pusat')" style="color: #7f8c8d; text-decoration: none;">Lupa Password?</a>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
+            <h3 style="margin-bottom: 15px; color: #2c3e50;">Daftar Akun Baru</h3>
+            
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="regNama" placeholder="Nama Lengkap">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="regEmail" placeholder="Email Baru">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="regPass" placeholder="Buat Password">
+            </div>
+            
+            <button class="btn-primary" onclick="prosesDaftar()">Kirim Pendaftaran</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITTA UT - Kelola Stok</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style Tambahan */
+        .input-file-wrapper { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        #coverBuku { display: none; }
+        .btn-pilih { background: #34495e; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; }
+        .preview-img { width: 50px; height: 70px; object-fit: cover; border: 1px solid #ddd; display: none; border-radius: 4px; }
+        .form-tambah { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-top: 4px solid #f1c40f; }
+        
+        /* Style Tombol Hapus */
+        .btn-hapus { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .btn-hapus:hover { background: #c0392b; }
+        
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 12px; border: 1px solid #eee; text-align: center; }
+        th { background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SITTA UT</div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="stok.html" class="active">Informasi Bahan Ajar</a></li>
+            <li><a href="tracking.html">Tracking</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="stok-container" style="padding: 30px;">
+        <h1 id="greeting">Selamat Datang</h1>
+        <p style="margin-bottom: 20px;">Manajemen Data Bahan Ajar Universitas Terbuka</p>
+
+        <div class="form-tambah">
+            <h3>Tambah Bahan Ajar Baru</h3>
+            <div class="input-file-wrapper">
+                <label for="coverBuku" class="btn-pilih">Pilih Cover</label>
+                <input type="file" id="coverBuku" accept="image/*" onchange="previewImage()">
+                <img id="previewCover" src="#" alt="Preview" class="preview-img">
+            </div>
+            <input type="text" id="kodeBarang" placeholder="Kode Barang">
+            <input type="text" id="namaBarang" placeholder="Nama Mata Kuliah">
+            <input type="number" id="stokBarang" placeholder="Stok">
+            <button onclick="tambahStok()" style="background: #27ae60; color: white; width: auto; padding: 10px 20px;">Tambah Data</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Kode</th>
+                    <th>Nama Bahan Ajar</th>
+                    <th>Stok</th>
+                    <th>Aksi</th> </tr>
+            </thead>
+            <tbody id="tabelStok">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

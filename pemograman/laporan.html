@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SITTA UT - Laporan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">SITTA UT</div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="stok.html">Stok</a></li>
+            <li><a href="tracking.html">Tracking</a></li>
+            <li><a href="laporan.html" class="active">Laporan</a></li>
+            <li><a href="histori.html">Histori</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container" style="padding:30px;">
+        <h1>Laporan Inventaris</h1>
+        <table border="1" style="width:100%; border-collapse:collapse; background:white;">
+            <thead>
+                <tr style="background:#2c3e50; color:white;">
+                    <th>Kode</th>
+                    <th>Nama Barang</th>
+                    <th>Stok</th>
+                </tr>
+            </thead>
+            <tbody id="isiLaporan"></tbody>
+        </table>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // data ke tabel laporan
+        const body = document.getElementById("isiLaporan");
+        dataBahanAjar.forEach(item => {
+            body.innerHTML += `<tr><td>${item.kodeBarang}</td><td>${item.namaBarang}</td><td>${item.stok}</td></tr>`;
+        });
+    </script>
+</body>
+</html>

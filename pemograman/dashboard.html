@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard SITTA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SITTA UT</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="stok.html">Informasi Bahan Ajar</a></li>
+            <li><a href="tracking.html">Tracking</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <h1 style="color: #2c3e50;">Selamat Pagi, <span id="userName">Asywal</span>!</h1>
+            <p style="color: #7f8c8d;">Anda masuk ke Dashboard Aplikasi SITTA Universitas Terbuka.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <div><h3>Total Mahasiswa</h3><div class="value">350</div></div>
+                <div style="font-size: 2.5rem; opacity: 0.2;">👥</div>
+            </div>
+            <div class="card" style="border-left-color: #3498db;">
+                <div><h3>Total Stok</h3><div class="value">980</div></div>
+                <div style="font-size: 2.5rem; opacity: 0.2;">📦</div>
+            </div>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
